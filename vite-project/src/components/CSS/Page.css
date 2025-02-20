@@ -10,12 +10,12 @@
   --base-variant: #dbdbdb;
   --text-color: #000000;
   --secondary-text: #191919;
-  --gradient-color:  linear-gradient(
+  --gradient-color: linear-gradient(
     90deg,
     rgba(9, 9, 15, 1) 64%,
     rgba(15, 207, 236, 1) 77%,
     rgba(4, 7, 42, 1) 96%
-  );;
+  );
 }
 .lightmode {
   --base-color: #070b1d;
@@ -26,21 +26,30 @@
 }
 
 h1 {
-  color: var(  --base-color);
+  color: var(--base-color);
 }
 h2 {
-  color: var( --base-color);
+  color: var(--base-color);
   padding: 10px 16px;
 }
 h3 {
-  color: var(  --base-color);
+  color: var(--base-color);
   font-weight: 300;
   padding: 10px 6px;
 }
+h4 {
+  color: #ffffff;
+  font-size: xx-large;
+}
 h5 {
-  color: var( --base-variant);
+  color: var(--base-variant);
   font-weight: 400;
   padding: 5px 6px;
+}
+h6 {
+  color: #bfbfbf;
+  font-weight: 400;
+  font-size: medium;
 }
 p {
   color: var(--base-variant);
@@ -91,7 +100,7 @@ header {
   justify-content: center;
   width: 100vw;
   padding: 8px 10px;
-  color: aliceblue;
+  color: var(--base-color);
   background-color: var(--text-color);
 }
 
@@ -101,7 +110,7 @@ header {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background:var(--gradient-color);
+  background: var(--gradient-color);
 }
 .background {
   background-image: url(../img/hero.svg);
@@ -136,7 +145,6 @@ button:hover {
 
 .btn-2,
 .btn-2 a {
-  background: #ffffff;
   color: black;
 }
 

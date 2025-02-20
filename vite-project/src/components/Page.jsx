@@ -6,8 +6,8 @@ const Page = () => {
   return (
     <div className="main">
       <section className="background">
-        <h2>Master full-stack web development</h2>
-        <h5>Learn HTML, CSS, JS, React</h5>
+        <h4>Master full-stack web development</h4>
+        <h6>Learn HTML, CSS, JS, React</h6>
         <div className="btnContainer">
           <button className="btn-1">
             <a target="_blank" href="https://github.com/dashboard">
