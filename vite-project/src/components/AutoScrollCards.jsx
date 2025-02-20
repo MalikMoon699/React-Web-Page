@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export default  AutoScrollCards=()=>{
+const AutoScrollCards = () => {
   const scrollRef = useRef(null);
   const [index, setIndex] = useState(0);
   const cardCount = 3;
@@ -27,7 +27,6 @@ export default  AutoScrollCards=()=>{
       ref={scrollRef}
       className="cardscroll flex overflow-x-scroll snap-x scroll-smooth w-full"
     >
-
       <div className="cardSame w-full flex-shrink-0 snap-center">
         <div className="cretive">
           <h2>Play Station</h2>
@@ -59,7 +58,6 @@ export default  AutoScrollCards=()=>{
         </a>
       </div>
 
-
       <div className="cardSame w-full flex-shrink-0 snap-center">
         <div className="cretive">
           <h2>Portfolio</h2>
@@ -87,7 +85,6 @@ export default  AutoScrollCards=()=>{
           <div className="cardbackground-2 samecard"></div>
         </a>
       </div>
-
 
       <div className="cardSame w-full flex-shrink-0 snap-center">
         <div className="cretive">
@@ -121,4 +118,6 @@ export default  AutoScrollCards=()=>{
       </div>
     </section>
   );
-}
+};
+
+export default AutoScrollCards;

@@ -1,6 +1,28 @@
 import React from "react";
 
 const ContactUs = () => {
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "78a4f87b-f147-4be2-96f3-72f5ce860ac4");
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    }).then((res) => res.json());
+
+    if (res.success) {
+      console.log("Success", res);
+    }
+  };
   return (
     <div className="main">
       <div className="viewPage">
@@ -35,11 +57,12 @@ const ContactUs = () => {
             </div>
           </div>
           <div className="sameContainer">
-            <form>
+            <form onSubmit={onSubmit}>
               <div className="inputContainer">
                 <label htmlFor="name">Enter Name</label>
                 <input
                   id="name"
+                  name="name"
                   type="text"
                   placeholder="Enter Name"
                   required
@@ -49,6 +72,7 @@ const ContactUs = () => {
                 <label htmlFor="name">Enter Email</label>
                 <input
                   id="name"
+                  name="email"
                   type="Email"
                   placeholder="Enter Email"
                   required
@@ -58,6 +82,7 @@ const ContactUs = () => {
                 <label htmlFor="name">Subject</label>
                 <input
                   id="name"
+                  name="subject"
                   type="text"
                   placeholder="Enter Subject"
                   required
@@ -65,10 +90,12 @@ const ContactUs = () => {
               </div>
               <div className="inputContainer">
                 <label htmlFor="name">Message</label>
-                <textarea name="" id=""></textarea>
+                <textarea name="message" id=""></textarea>
               </div>
               <div className="btn-center">
-                <button className="btn-1">Send Mail</button>
+                <button className="btn-1" type="submit">
+                  Send Mail
+                </button>
               </div>
             </form>
           </div>
